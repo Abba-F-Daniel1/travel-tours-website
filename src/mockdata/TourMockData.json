@@ -1,0 +1,90 @@
+[
+  {
+    "id": "tour1",
+    "title": "London City Tour",
+    "description": "Explore the historic city of London with our guided tours.",
+    "image": "https://blog.pamgolding.co.za/wp-content/uploads/2016/07/london-hero-1.jpg",
+    "location": "United Kingdom",
+    "price": 1800,
+    "rating": 4.8,
+    "duration": "7 days",
+    "maxGuests": 7
+  },
+  {
+    "id": "tour2",
+    "title": "Paris Art and Culture Tour",
+    "description": "Experience the art and culture of Paris with our expert guides.",
+    "image": "https://www.bnesim.com/wp-content/uploads/2023/10/ff679657716a1c08cee8f3386a4eb85cebacbb33-1600x1067-1-1024x614.webp",
+    "location": "France",
+    "price": 1600,
+    "rating": 4.3,
+    "duration": "2 days",
+    "maxGuests": 12
+  },
+  {
+    "id": "tour3",
+    "title": "Maldives Island Hopping",
+    "description": "Discover the beauty of the Maldives through island hopping adventures.",
+    "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/02/5f/08.jpg",
+    "location": "Sri Lanka",
+    "price": 1200,
+    "rating": 4.2,
+    "duration": "14 days",
+    "maxGuests": 10
+  },
+  {
+    "id": "tour4",
+    "title": "Swiss Alps Ski Tour",
+    "description": "Enjoy a thrilling ski tour in the Swiss Alps with our professional instructors.",
+    "image": "https://media.istockphoto.com/id/1273527838/photo/amazing-beautiful-view-of-gornergrat-zermatt-matterhorn-ski-resort-in-switzerland-with-cable.jpg?s=612x612&w=0&k=20&c=gxxuDH5R3_RR2D30H1WBWUFx1AfQrK2H6pyfOhrBDNQ=",
+    "location": "Switzerland",
+    "price": 11000,
+    "rating": 4.0,
+    "duration": "3 days",
+    "maxGuests": 40
+  },
+  {
+    "id": "tour5",
+    "title": "New York City Food Tour",
+    "description": "Taste the diverse culinary delights of New York City on our food tour.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaE-iX8UYAGtBJ3nXevxQuBgNzIBnBAbsLDQ&s",
+    "location": "New York",
+    "price": 20000,
+    "rating": 4.9,
+    "duration": "8 days",
+    "maxGuests": 30
+  },
+  {
+    "id": "tour6",
+    "title": "Kenya Wildlife Safari",
+    "description": "Experience the wildlife of Kenya with our guided safari tours.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdbIu9nOC701elfGCnGss_ZJvvk1EqTmf71Q&s",
+    "location": "Kenya",
+    "price": 15000,
+    "rating": 4.4,
+    "duration": "6 days",
+    "maxGuests": 18
+  },
+  {
+    "id": "tour7",
+    "title": "Rome Historical Tour",
+    "description": "Discover the ancient history of Rome with our knowledgeable guides.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQAcZJTAjfUTXpihruo74FUaroN3j297YnrQ&s",
+    "location": "Italy",
+    "price": 10000,
+    "rating": 4.0,
+    "duration": "9 days",
+    "maxGuests": 10
+  },
+  {
+    "id": "tour8",
+    "title": "Bali Cultural Tour",
+    "description": "Immerse yourself in the culture of Bali with our cultural tours.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwNsOxSl4ZgY7IB6QjEVtuqs6kdShI8gJNpw&s",
+    "location": "Bali",
+    "price": 1800,
+    "rating": 3.9,
+    "duration": "7 days",
+    "maxGuests": 12
+  }
+]

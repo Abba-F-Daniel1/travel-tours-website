@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hotel1",
+    "title": "Luxury Hotel in London",
+    "description": "Enjoy your stay at our luxurious hotel in the heart of London.",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/luxury-hotels-london-1-1629110849.jpeg",
+    "price": 5200,
+    "rating": 4.8,
+    "duration": "2 nights",
+    "maxGuests": 3
+  },
+  {
+    "id": "hotel2",
+    "title": "Boutique Hotel in Paris",
+    "description": "A charming boutique hotel in the romantic city of Paris.",
+    "image": "https://santorinidave.com/wp-content/uploads/2023/08/paris-boutique-relais-christine-exterior.jpeg",
+    "price": 18000,
+    "rating": 4.5,
+    "duration": "7 nights",
+    "maxGuests": 15
+  },
+  {
+    "id": "hotel3",
+    "title": "Beachfront Resort in Maldives",
+    "description": "Relax at our beachfront resort with stunning ocean views.",
+    "image": "https://cdn1.matadornetwork.com/blogs/1/2021/05/maldives-resorts-2.jpg",
+    "price": 1200,
+    "rating": 4.2,
+    "duration": "12 nights",
+    "maxGuests": 10
+  },
+  {
+    "id": "hotel4",
+    "title": "Mountain Lodge in Switzerland",
+    "description": "Experience the serene beauty of the Swiss Alps at our mountain lodge.",
+    "image": "https://www.vayaadventures.com/wp-content/uploads/iStock-appenzell-2.jpg",
+    "price": 1200,
+    "rating": 4.1,
+    "duration": "14 nights",
+    "maxGuests": 15
+  },
+  {
+    "id": "hotel5",
+    "title": "Urban Hotel in New York",
+    "description": "Stay in the heart of New York City at our contemporary urban hotel.",
+    "image": "https://www.getawaymavens.com/wp-content/uploads/2023/01/radio-hotel-nyc.jpg",
+    "price": 15200,
+    "rating": 4.8,
+    "duration": "4 nights",
+    "maxGuests": 6
+  },
+  {
+    "id": "hotel6",
+    "title": "Safari Lodge in Kenya",
+    "description": "Embark on a wild adventure at our luxurious safari lodge in Kenya.",
+    "image": "https://drifttravel.com/wp-content/uploads/2019/06/Luxury-Safari-Lodges-in-Kenya.jpg",
+    "price": 1200,
+    "rating": 3.7,
+    "duration": "8 nights",
+    "maxGuests": 5
+  },
+  {
+    "id": "hotel7",
+    "title": "Historic Hotel in Rome",
+    "description": "Discover the rich history of Rome while staying at our historic hotel.",
+    "image": "https://www.turismoroma.it/sites/default/files/unsplash%201%20luglio%20gabriella-clare-marino.jpg",
+    "price": 3200,
+    "rating": 4.7,
+    "duration": "6 nights",
+    "maxGuests": 6
+  },
+  {
+    "id": "hotel8",
+    "title": "Eco-Friendly Hotel in Bali",
+    "description": "Enjoy a sustainable stay at our eco-friendly hotel in Bali.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi--yg8dL3Kfhv9OxPPREIgYFh4TaBmVhCRXXahFUumM1goAT-p2tGIRIvDoP5w4d8OTo&usqp=CAU",
+    "price": 14000,
+    "rating": 3.8,
+    "duration": "10 nights",
+    "maxGuests": 8
+  }
+]
