@@ -1,6 +1,6 @@
+import SearchBar from "../components/home/SearchBar";
 import LoadingSpinner from "../components/loader/LoadingSpinner";
 import PackageCard from "../components/packages/PackageCard";
-import SearchBar from "../components/home/SearchBar";
 import mockHotelData from "../mockdata/HotelMockData.json";
 import mockTourData from "../mockdata/TourMockData.json";
 import React, { useState, useEffect, useMemo } from "react";
@@ -24,8 +24,8 @@ const Packages = () => {
       },
       body: new URLSearchParams({
         grant_type: "client_credentials",
-        client_id: import.meta.env.VITE_AMADEUS_CLIENT_ID,
-        client_secret: import.meta.env.VITE_AMADEUS_CLIENT_SECRET,
+        client_id: "OuwhblbUL6lALVLubKwyujJJy4d4iJEE",
+        client_secret: "M9kVRmwPaPxDP3J4",
       }),
     });
 
@@ -83,9 +83,10 @@ const Packages = () => {
   }, []);
 
   const filteredOffers = useMemo(() => {
-    return travelOffers[category].filter((offer) =>
-      offer.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      offer.description.toLowerCase().includes(searchTerm.toLowerCase())
+    return travelOffers[category].filter(
+      (offer) =>
+        offer.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        offer.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [category, searchTerm, travelOffers]);
 
@@ -99,10 +100,9 @@ const Packages = () => {
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-center py-16 text-red-500">{error}</div>;
+  if (error)
+    return <div className="text-center py-16 text-red-500">{error}</div>;
 
-
- 
   return (
     <div>
       <h2 className="text-4xl font-display font-bold text-center mb-5 text-primary-dark mt-8">
@@ -125,7 +125,9 @@ const Packages = () => {
         </select>
       </div>
       {filteredOffers.length === 0 ? (
-        <p className="text-center text-gray-600">No packages found matching your search.</p>
+        <p className="text-center text-gray-600">
+          No packages found matching your search.
+        </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 m-4">
           {filteredOffers.map((offer) => (
