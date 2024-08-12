@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "NYC to LON",
+    "description": "Flight by AA, priced at 450.99 USD. Number of bookable seats: 10",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Boeing_787-8_Dreamliner%2C_All_Nippon_Airways_-_ANA_AN2064627.jpg/640px-Boeing_787-8_Dreamliner%2C_All_Nippon_Airways_-_ANA_AN2064627.jpg"
+  },
+  {
+    "id": "2",
+    "title": "LON to PAR",
+    "description": "Flight by BA, priced at 200.50 EUR. Number of bookable seats: 15",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/DSC_8720-G-EUOE_%2810534765915%29.jpg/640px-DSC_8720-G-EUOE_%2810534765915%29.jpg"
+  },
+  {
+    "id": "3",
+    "title": "PAR to ROM",
+    "description": "Flight by AF, priced at 180.75 EUR. Number of bookable seats: 8",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Airbus_A319-111_%28F-GRHH%29_01.jpg/640px-Airbus_A319-111_%28F-GRHH%29_01.jpg"
+  },
+  {
+    "id": "4",
+    "title": "ROM to BCN",
+    "description": "Flight by IB, priced at 220.25 EUR. Number of bookable seats: 12",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/2010-05-27_A320_IberiaEC-IZR_01.jpg/640px-2010-05-27_A320_IberiaEC-IZR_01.jpg"
+  },
+  {
+    "id": "5",
+    "title": "BCN to NYC",
+    "description": "Flight by DL, priced at 500.00 USD. Number of bookable seats: 6",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Delta_Air_Lines_Airbus_A350-900_N512DN.jpg/640px-Delta_Air_Lines_Airbus_A350-900_N512DN.jpg"
+  },
+  {
+    "id": "6",
+    "title": "TYO to SYD",
+    "description": "Flight by JL, priced at 750.50 AUD. Number of bookable seats: 20",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Japan_Air_Lines%2C_JL60%2C_Boeing_787-8_Dreamliner%2C_JA821J%2C_Departed_to_Los_Angeles%2C_Kansai_Airport_%2816575012264%29.jpg/640px-Japan_Air_Lines%2C_JL60%2C_Boeing_787-8_Dreamliner%2C_JA821J%2C_Departed_to_Los_Angeles%2C_Kansai_Airport_%2816575012264%29.jpg"
+  },
+  {
+    "id": "7",
+    "title": "DXB to DEL",
+    "description": "Flight by EK, priced at 300.75 AED. Number of bookable seats: 18",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/A6-EEQ_LAX_%2823212851636%29.jpg/640px-A6-EEQ_LAX_%2823212851636%29.jpg"
+  },
+  {
+    "id": "8",
+    "title": "SFO to HNL",
+    "description": "Flight by UA, priced at 400.00 USD. Number of bookable seats: 14",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/United_Airlines%2C_N665UA%2C_Boeing_767-322_ER.jpg/640px-United_Airlines%2C_N665UA%2C_Boeing_767-322_ER.jpg"
+  }
+]

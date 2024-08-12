@@ -1,141 +1,131 @@
+import SearchBar from "../components/home/SearchBar";
 import LoadingSpinner from "../components/loader/LoadingSpinner";
 import PackageCard from "../components/packages/PackageCard";
-import SearchBar from "../components/home/SearchBar";
+import mockFlightData from "../mockdata/FlightMockData.json";
 import mockHotelData from "../mockdata/HotelMockData.json";
 import mockTourData from "../mockdata/TourMockData.json";
-import React, { useState, useEffect, useMemo } from "react";
+import ErrorMessage from "../pages/ErrorMessage";
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useMemo, useCallback } from "react";
+
+const CATEGORIES = {
+  HOTELS: "hotels",
+  TOURS: "tours",
+  FLIGHTS: "flights",
+};
 
 const Packages = () => {
   const [travelOffers, setTravelOffers] = useState({
-    flights: [],
-    hotels: mockHotelData,
-    tours: mockTourData,
+    [CATEGORIES.FLIGHTS]: mockFlightData,
+    [CATEGORIES.HOTELS]: mockHotelData,
+    [CATEGORIES.TOURS]: mockTourData,
   });
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [category, setCategory] = useState("hotels");
+  const [category, setCategory] = useState(CATEGORIES.HOTELS);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const fetchAccessToken = async () => {
-    const response = await fetch("/api/v1/security/oauth2/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        grant_type: "client_credentials",
-        client_id: import.meta.env.VITE_AMADEUS_CLIENT_ID,
-        client_secret: import.meta.env.VITE_AMADEUS_CLIENT_SECRET,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.access_token;
-  };
-
-  const fetchTravelOffers = async () => {
-    try {
-      const token = await fetchAccessToken();
-
-      const response = await fetch(
-        "/api/v2/shopping/flight-offers?originLocationCode=NYC&destinationLocationCode=LON&departureDate=2024-12-01&adults=1",
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const flightOffers = data.data.map((offer) => {
-        const itinerary = offer.itineraries[0];
-        const segment = itinerary.segments[0];
-        const price = offer.price;
-
-        return {
-          id: offer.id,
-          title: `${segment.departure.iataCode} to ${segment.arrival.iataCode}`,
-          description: `Flight by ${segment.carrierCode}, priced at ${price.total} ${price.currency}. Number of bookable seats: ${offer.numberOfBookableSeats}`,
-          image: `https://source.unsplash.com/1600x900/?airplane,flight`,
-        };
-      });
-
-      setTravelOffers((prev) => ({ ...prev, flights: flightOffers }));
-    } catch (error) {
-      setError("Error fetching travel offers");
-      console.error("Error fetching travel offers:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchTravelOffers();
-  }, []);
-
+  // Filtering offers based on search term
   const filteredOffers = useMemo(() => {
-    return travelOffers[category].filter((offer) =>
-      offer.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      offer.description.toLowerCase().includes(searchTerm.toLowerCase())
+    if (!travelOffers[category]) return [];
+
+    return travelOffers[category].filter(
+      (offer) =>
+        offer.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        offer.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [category, searchTerm, travelOffers]);
 
-  const handleSearch = (term) => {
+  // Handling search term change
+  const handleSearch = useCallback((term) => {
     setSearchTerm(term);
-  };
+  }, []);
 
-  const handleCategoryChange = (e) => {
+  // Handling category change
+  const handleCategoryChange = useCallback((e) => {
     setCategory(e.target.value);
-    setSearchTerm(""); // Reset search term when changing category
-  };
+    setSearchTerm("");
+  }, []);
 
-  if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-center py-16 text-red-500">{error}</div>;
+  // Fetching offers based on category
+  const fetchOffers = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      // Simulating API call with a timeout
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // const response = await fetch(`/api/offers/${category}`);
+      // const data = await response.json();
+      // setTravelOffers(prevOffers => ({ ...prevOffers, [category]: data }));
+    } catch (err) {
+      console.error("Error fetching offers:", err);
+      setError("Failed to fetch offers. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  }, [category]);
 
+  // for fetching real data
+  // useEffect(() => {
+  //   fetchOffers();
+  // }, [fetchOffers]);
 
- 
+  if (error) {
+    return <ErrorMessage message={error} onRetry={fetchOffers} />;
+  }
+
   return (
-    <div>
-      <h2 className="text-4xl font-display font-bold text-center mb-5 text-primary-dark mt-8">
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-4xl font-display font-bold text-center mb-8 text-primary-dark">
         Our Excellent Packages
       </h2>
 
-      <div className="mb-3">
+      <div className="mb-6">
         <SearchBar onSearch={handleSearch} />
       </div>
 
-      <div className="flex mb-6 justify-center p-4">
+      <div className="flex mb-6 justify-center">
         <select
           value={category}
           onChange={handleCategoryChange}
-          className="px-10 p-2 border rounded text-primary-dark"
+          className="px-4 py-2 border rounded-md text-primary-dark bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-light"
         >
-          <option value="hotels">Hotels</option>
-          <option value="tours">Tours</option>
-          <option value="flights">Flights</option>
+          {Object.values(CATEGORIES).map((cat) => (
+            <option key={cat} value={cat}>
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            </option>
+          ))}
         </select>
       </div>
-      {filteredOffers.length === 0 ? (
-        <p className="text-center text-gray-600">No packages found matching your search.</p>
+
+      {loading ? (
+        <LoadingSpinner />
+      ) : filteredOffers.length === 0 ? (
+        <p className="text-center text-gray-600">
+          No packages found matching your search.
+        </p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 m-4">
-          {filteredOffers.map((offer) => (
-            <PackageCard
-              key={offer.id}
-              offer={offer}
-              type={category.slice(0, -1)}
-            />
-          ))}
-        </div>
+        <AnimatePresence>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {filteredOffers.map((offer) => (
+              <motion.div
+                key={offer.id}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <PackageCard offer={offer} type={category.slice(0, -1)} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
       )}
     </div>
   );
