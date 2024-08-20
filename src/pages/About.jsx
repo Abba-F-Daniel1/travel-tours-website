@@ -1,4 +1,3 @@
-import WanderSphere from "../../public/images/wandersphere.png";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -34,7 +33,7 @@ const About = () => {
         </div>
         <div>
           <img
-            src={WanderSphere}
+            src="https://res.cloudinary.com/doetven6z/image/upload/v1724140144/wandersphere_afjy5l.png"
             alt="WanderSphere"
             className="w-full h-auto rounded-lg shadow-lg"
           />

@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <section
       className="relative h-screen bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url(/images/hero-flight.png)" }}
+      style={{ backgroundImage: "url(https://res.cloudinary.com/doetven6z/image/upload/v1724140497/hero-flight_yna7qp.png)" }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative container mx-auto flex items-center justify-center h-full text-center text-white px-4">
